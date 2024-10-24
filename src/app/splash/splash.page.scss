@@ -1,0 +1,47 @@
+ion-content {
+  --background: url("../../assets/fondo.png");
+  --background-size: cover;
+  --background-position: center;
+  --background-repeat: no-repeat;
+  font-family: 'Poppins', 'Poppins-light';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container img {
+  display: flex;
+}
+
+.container {
+  justify-content: center;
+  align-items: flex-start;
+  height: 50%;
+  width: 100%;
+}
+
+.container-data {
+  height: 25%;
+  width: 100%;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+.container-data-inf {
+  height: 20%;
+  width: 100%;
+  padding: 10px;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url(../../assets/fonts/Poppins.ttf);
+}
+
+@font-face {
+  font-family: 'Poppins-light';
+  src: url(../../assets/fonts/Poppins-Light.ttf);
+}

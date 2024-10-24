@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>INICIO</ion-title>
+  </ion-toolbar>
+  <div class="user-dropdown" (click)="toggleDropdown()">
+    <button class="user-button dropdown-toggle"  type="button" id="dropdownMenuButton" aria-expanded="false"*ngIf="usuario">{{usuario}}</button>
+    <div class="dropdown-menu" *ngIf="dropdownOpen">
+      <button (click)="cerrarSesion()">Salir</button>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">INICIO</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="container">
+    <div class="input-group-append">
+      <span >
+          <img class="logo" src="../../assets/candado abierto.png"  alt="">
+      </span>
+  </div>
+    <div class="texto">
+      <h1>FELICIDADES INGRESASTE CORRECTAMENTE</h1>
+    </div>
+  </div>
+ 
+  
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-content [fullscreen]="true">
+  <form action="datos" class="form-container">
+    <div class="input-group-append">
+      <span>
+        <img class="logo animate__animated animate__tada" src="../../assets/HGJGHJGH.png" alt="">
+      </span>
+    </div>
+
+    <div class="container-input">
+      <div class="input">
+        <input type="email" name="user" [(ngModel)]="email" id="name" placeholder="ingrese correo electronico">
+      </div>
+      <div class="input">
+        <input type="password" id="pass" [(ngModel)]="clave" name="clave" placeholder="ingrese contraseña">
+      </div>
+      <br>
+    </div>
+    <div class="container-login">
+      <button (click)="login()" class="btn-outline-primary"> Enviar</button>
+      <div class="dataError">
+        <h2 *ngIf="error">{{error}}</h2>
+      </div>
+
+    </div>
+
+    <div class="rellenos">
+      <div class="usr-relleno" (click)="rellenarUsuario(0)">
+        <span class="input-group-text" id="basic-addon2">
+          <img class="btnEnviar animate__animated animate__flash" src="../../assets/user_alarma.png" width="40px"
+            alt="rellenar datos">
+        </span>
+      </div>
+      <div class="usr-relleno" (click)="rellenarUsuario(1)">
+        <span class="input-group-text" id="basic-addon2">
+          <img class="btnEnviar animate__animated animate__flash" src="../../assets/user_alarma.png" width="40px"
+            alt="rellenar datos">
+        </span>
+      </div>
+      <div class="usr-relleno" (click)="rellenarUsuario(2)">
+        <span class="input-group-text" id="basic-addon2">
+          <img class="btnEnviar animate__animated animate__flash" src="../../assets/user_alarma.png" width="40px"
+            alt="rellenar datos">
+        </span>
+      </div>
+    </div>
+
+    <!-- <button  (click)="rellenarUsuario()" class="btn-outline-primary relleno"> RELLENAR </button>  -->
+  </form>
+</ion-content>
