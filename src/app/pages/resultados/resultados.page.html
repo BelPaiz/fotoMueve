@@ -1,0 +1,49 @@
+<ion-content [fullscreen]="true" style="--padding-bottom: 56px;">
+
+  <div id="content">
+
+    <div *ngIf="display == cosas.lindas" class="container-grafico">
+      <div class="texto-title">
+        <h2 class="lindas">Estadísticas<br>COSAS LINDAS</h2>
+      </div>
+
+      <div class="chart">
+        <ngx-charts-pie-chart [results]="fotoService.dataSetLindas" [scheme]="'fire'" [legend]="false"
+          [legendPosition]="position">
+          <ng-template #tooltipTemplate let-model="model">
+            <p>{{model.value}} {{model.value != 1 ? 'votos' : 'voto' }}</p>
+            <img [src]="model.extra" alt="" [style.width.px]="200">
+          </ng-template>
+        </ngx-charts-pie-chart>
+      </div>
+    </div>
+
+    <div *ngIf="display == cosas.feas" class="container-grafico">
+      <div class="texto-title">
+        <h2 class="feas">Estadísticas<br>COSAS FEAS</h2>
+      </div>
+
+      <div class="chart">
+        <ngx-charts-bar-horizontal [view]="[350, 400]" [results]="fotoService.dataSetFeas" [legend]="false"
+          [xAxis]="true" [yAxis]="false" [xAxisLabel]="'Foto'" [yAxisLabel]="'Votos'" [showXAxisLabel]="true"
+          [showYAxisLabel]="true" [scheme]="'fire'" style="fill: #000000;">
+          <ng-template #tooltipTemplate let-model="model">
+            <p>{{model.value}} {{model.value != 1 ? 'votos' : 'voto' }}</p>
+            <img [src]="model.extra" alt="" [style.width.px]="200">
+          </ng-template>
+        </ngx-charts-bar-horizontal>
+      </div>
+    </div>
+
+  </div>
+</ion-content>
+
+<ion-footer [translucent]="true" slot="fixed">
+  <ion-toolbar>
+    <div class="toolbar-container">
+      <ion-button [routerLink]="['/inicio']"> <img class="volver" src="../../../assets/volver.png" alt="volver">
+      </ion-button>
+      <ion-button (click)="switchDisplay()">Ver {{this.display == cosas.feas ? 'lindas' : 'feas'}}</ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

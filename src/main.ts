@@ -7,11 +7,18 @@ import { AppComponent } from './app/app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { DatePipe } from '@angular/common';
 
 bootstrapApplication(AppComponent, {
   providers: [
+    DatePipe,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
-    provideRouter(routes, withPreloading(PreloadAllModules)), provideFirebaseApp(() => initializeApp({"projectId":"app-pps-01","appId":"1:220128409034:web:6c14e353e4924d55500b33","storageBucket":"app-pps-01.appspot.com","apiKey":"AIzaSyBQnjlSbqQsRSy7kIwDTIToM-AExNuVPDQ","authDomain":"app-pps-01.firebaseapp.com","messagingSenderId":"220128409034"})), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()),
+    provideRouter(routes, withPreloading(PreloadAllModules)), 
+    provideFirebaseApp(() => initializeApp({"projectId":"app-pps-01","appId":"1:220128409034:web:6c14e353e4924d55500b33","storageBucket":"app-pps-01.appspot.com","apiKey":"AIzaSyBQnjlSbqQsRSy7kIwDTIToM-AExNuVPDQ","authDomain":"app-pps-01.firebaseapp.com","messagingSenderId":"220128409034"})), 
+    provideAuth(() => getAuth()), 
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
   ],
 });

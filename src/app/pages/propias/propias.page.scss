@@ -1,0 +1,19 @@
+ion-content {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    --background: #004173;
+    font-family: 'Poppins', 'Poppins-light';
+}
+
+.footer-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+ion-button {
+    --background: #f29f01;
+    font-family: 'Poppins';
+}

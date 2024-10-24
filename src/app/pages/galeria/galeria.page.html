@@ -1,0 +1,29 @@
+<ion-content [fullscreen]="true">
+
+  <div id="content">
+    <ion-card *ngFor="let f of this.fotoService.getFotos()">
+      <img alt="Foto del edificio" [src]="f.url" />
+      <ion-card-content class="photo-card flexrow">
+        <div class="flexrow centered likes" (click)="this.fotoService.like(f)">
+          <ion-icon [name]="usuarioVoto(f.votos) ? 'thumbs-up' : 'thumbs-up-outline'"></ion-icon>
+          <p>{{f.votos.length}}</p>
+        </div>
+        <div class="flex">
+          <ion-card-title>{{ f.usuario.split('@')[0] }}</ion-card-title>
+          <ion-card-subtitle>{{ (f.fecha.seconds * 1000) | date:'dd/MM/yy - HH:mm' }}</ion-card-subtitle>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar>
+    <div class="toolbar-container">
+      <ion-button [routerLink]="['/inicio']"> <img class="volver" src="../../../assets/volver.png" alt="volver">
+      </ion-button>
+      <ion-button (click)="takePhoto()"><ion-icon name="camera-sharp"></ion-icon></ion-button>
+      <ion-button [routerLink]="['/resultados']">Resultados</ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

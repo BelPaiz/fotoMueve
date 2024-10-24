@@ -1,0 +1,17 @@
+<ion-content [fullscreen]="true">
+
+  <div class="container-salir">
+    <span class="boton2">
+      <img class="btn-salir" src="../../../assets/nubecita2.png" alt="salir" [routerLink]="['/propias']">
+    </span>
+
+    <span class="boton2" (click)="cerrarSesion()">
+      <img class="btn-salir" src="../../../assets/nubecita.png" alt="salir">
+    </span>
+  </div>
+
+  <div class="container">
+    <ion-button class="btn btn-lindas" (click)="irGaleria(cosas.lindas)"></ion-button>
+    <ion-button class="btn btn-feas" (click)="irGaleria(cosas.feas)"></ion-button>
+  </div>
+</ion-content>

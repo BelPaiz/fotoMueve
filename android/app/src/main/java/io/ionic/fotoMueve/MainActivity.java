@@ -1,4 +1,4 @@
-package io.ionic.fotoMueve;
+package io.ionic.fotomueve;
 
 import com.getcapacitor.BridgeActivity;
 

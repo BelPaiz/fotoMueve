@@ -1,0 +1,39 @@
+:host {
+    * {
+        color: black;
+    }
+}
+
+ion-content {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    --background: #004173;
+    font-family: 'Poppins', 'Poppins-light';
+}
+
+ion-button {
+    --background: #f29f01;
+    font-family: 'Poppins';
+}
+
+ion-toolbar {
+    --ion-background-color: transparent;
+    /* Cambia el color de fondo si es necesario */
+    justify-content: center;
+    align-items: center;
+}
+
+.toolbar-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0%;
+}
+
+.volver {
+    padding: 0%;
+    width: 60%;
+    height: 60%;
+}
