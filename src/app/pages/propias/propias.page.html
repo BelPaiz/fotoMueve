@@ -1,3 +1,13 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="toolbar-container">
+      <ion-button (click)="previous()">Anterior</ion-button>
+      <ion-button (click)="first()">Primera</ion-button>
+      <ion-button (click)="next()">Siguiente</ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content [fullscreen]="true">
 
   <div id="content">
@@ -6,19 +16,20 @@
       <p>Todavía no tienes fotos propias.</p>
     </div>
 
-    <ion-card *ngFor="let f of this.fotoService.getFotosPropias()">
-      <img alt="Foto del edificio" [src]="f.url" />
+    <ion-card>
+      <img alt="Foto del edificio" [src]="fotoService.getFotoPropia(index).url" />
       <ion-card-content class="photo-card flexrow">
-        <div class="flexrow centered likes" (click)="this.fotoService.like(f)">
-          <ion-icon [name]="usuarioVoto(f.votos) ? 'thumbs-up' : 'thumbs-up-outline'"></ion-icon>
-          <p>{{f.votos.length}}</p>
+        <div class="flexrow centered likes" (click)="this.fotoService.like(fotoService.getFotoPropia(index))">
+          <ion-icon [name]="usuarioVoto(fotoService.getFotoPropia(index).votos) ? 'thumbs-up' : 'thumbs-up-outline'"></ion-icon>
+          <p>{{fotoService.getFotoPropia(index).votos.length}}</p>
         </div>
         <div class="flex">
-          <ion-card-title>cosas {{ f.categoria }}</ion-card-title>
-          <ion-card-subtitle>{{ (f.fecha.seconds * 1000) | date:'dd/MM/yy - HH:mm' }}</ion-card-subtitle>
+          <ion-card-title>cosas {{ fotoService.getFotoPropia(index).categoria }}</ion-card-title>
+          <ion-card-subtitle>{{ (fotoService.getFotoPropia(index).fecha.seconds * 1000) | date:'dd/MM/yy - HH:mm' }}</ion-card-subtitle>
         </div>
       </ion-card-content>
     </ion-card>
+    <p>Foto Nº {{index + 1}} de {{this.fotoService.getFotosPropias().length}}</p>
   </div>
 
 </ion-content>

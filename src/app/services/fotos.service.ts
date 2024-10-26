@@ -45,6 +45,14 @@ export class FotosService {
     this.fetchAll();
   }
 
+  public getFoto(i: number): Foto {
+    return this.fotos.filter((f) => { return f.categoria == this.getGaleria() })[i];
+  }
+
+  public getFotoPropia(i: number): Foto {
+    return this.getFotosPropias()[i];
+  }
+
   public takeAndUploadFoto() {
     this.camara.sacarFoto()
     .then(async (photo) => {
@@ -54,10 +62,6 @@ export class FotosService {
         await this.pushOne(url);
       }
     })
-  }
-
-  public uploadFoto() {
-
   }
 
   public like(foto: Foto) {
